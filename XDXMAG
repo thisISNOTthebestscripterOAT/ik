@@ -1,0 +1,375 @@
+LocalPlayer = game.Players.LocalPlayer
+getgenv().ping = ""
+getgenv().webhooklink = ""
+getgenv().MoreWebhooks = nil
+local ping = (game:GetService("Stats"):WaitForChild("Network"):WaitForChild("ServerStatsItem"):WaitForChild"Data Ping":GetValue())
+function UseItem(item)
+    pcall(function()
+    LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack[item])
+    if ping > 130 then wait(1) else wait(0.25) end
+    if ping > 130 then wait(0.50) else wait(0.50) end
+    LocalPlayer.Character[item]:Activate()
+
+    firesignal(LocalPlayer.PlayerGui:WaitForChild"DialogueGui":WaitForChild"Frame":WaitForChild"ClickContinue".MouseButton1Click)
+    firesignal(LocalPlayer.PlayerGui:WaitForChild"DialogueGui":WaitForChild"Frame":WaitForChild"Options":WaitForChild"Option1":WaitForChild"TextButton".MouseButton1Click)
+    end)
+end
+
+local function Telepoarta()
+    local part = Instance.new("Part")
+    part.Name = tostring(math.random(1, 9999))
+    part.Anchored = true
+    part.Size = Vector3.new(200,1,200)
+    part.Parent = workspace
+    part.Transparency = 1
+    part.Position = Vector3.new(-437.80279541015625, -70.98097229003906, 327.1223449707031)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = part.CFrame * CFrame.new(0, 7, 0)
+end
+
+local function sendWebhook(Blehh, ping)
+    pcall(function()
+    local everyone
+    if getgenv().ping == "" then
+        everyone = ""
+    elseif getgenv().ping ~= "" and ping == true then
+        everyone = "<@"..getgenv().ping..">"
+    end
+    local data = {
+        ['content'] = everyone,
+        ['username'] = "HsB CatHook",
+        ["embeds"] = {{
+            ['title'] = "Your Bizarre Adventure",
+            ['color'] = tonumber(0xff7f42),
+            ["footer"] = {
+                ["text"] = ("HsB Hub ("..os.date("%H:%M")..")"),
+                ["icon_url"] = "https://cdn.discordapp.com/attachments/875211210486870076/1067422518413103134/hsb222.png"
+            },
+            ["fields"] = {
+                {
+                    ["name"] = "Account Name", -- This is  the title of your field.
+                    ["value"] = "||"..game.Players.LocalPlayer.Name.."||" -- This is the value of your field.
+                },
+                {
+                    ["name"] = "InfoHook", -- This is  the title of your field.
+                    ["value"] = Blehh -- This is the value of your field.
+                },
+            }}
+        }
+    }
+    local newdata = game:GetService("HttpService"):JSONEncode(data)
+
+    local headers = {
+        ["content-type"] = "application/json"
+    }
+    request = http_request or request or HttpPost or syn.request
+    local abcdef = {Url = getgenv().webhooklink, Body = newdata, Method = "POST", Headers = headers}
+    request(abcdef)
+end)
+end
+
+local function updateArrows()
+    local Children = {}
+    for _, Obj in pairs(LocalPlayer:WaitForChild("Backpack"):GetChildren()) do
+        if Obj.Name == ("Mysterious Arrow") then
+            table.insert(Children, Obj)
+            if workspace:FindFirstChild("Arrow") then
+                workspace.Arrow.Value = #Children
+            end
+        end
+    end
+end
+local function updateRokakas()
+    local Children = {}
+    for _, Obj in pairs(LocalPlayer:WaitForChild("Backpack"):GetChildren()) do
+        if Obj.Name == ("Rokakaka") then
+            table.insert(Children, Obj)
+            if workspace:FindFirstChild("Roka") then 
+                workspace.Roka.Value = #Children
+            end
+        end
+    end
+end
+
+if workspace:FindFirstChild("Arrow")==nil then
+    local hi = Instance.new("NumberValue")
+    hi.Parent = game.Workspace
+    hi.Name = ("Arrow")
+    print("createda")
+end
+
+if workspace:FindFirstChild("Roka")==nil then
+    local hi = Instance.new("NumberValue")
+    hi.Parent = game.Workspace
+    hi.Name = ("Roka")
+    print("createdr")
+end
+
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
+local Window = Rayfield:CreateWindow({
+    Name = "HsB YBA GUI By senS",
+    LoadingTitle = "HsB Hub",
+    LoadingSubtitle = "by Sirius",
+    ConfigurationSaving = {
+       Enabled = true,
+       FolderName = nil, -- Create a custom folder for your hub/game
+       FileName = "Big Hub"
+    },
+    Discord = {
+       Enabled = true,
+       Invite = "HsB", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD.
+       RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+    },
+    KeySystem = false, -- Set this to true to use our key system
+    KeySettings = {
+       Title = "Sirius Hub",
+       Subtitle = "Key System",
+       Note = "Join the discord (discord.gg/sirius)",
+       FileName = "SiriusKey",
+       SaveKey = false,
+       GrabKeyFromSite = true, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+       Key = "Hello"
+    }
+ })
+
+ local function Notify(Title, Content, Duration)
+    Rayfield:Notify({
+       Title = Title,
+       Content = Content,
+       Duration = Duration,
+       Image = 4483362458,
+    })
+    end
+
+local Tab = Window:CreateTab("Main", 4483362458) -- Title, Image
+local Tab2 = Window:CreateTab("Settings", 4483362458) -- Title, Image
+local Section2 = Tab2:CreateSection("Webhook")
+local Toggle4 = Tab2:CreateToggle({
+    Name = "Enable Webhook Alerts/Notifications",
+    CurrentValue = false,
+    Flag = "Toggle4", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+    Callback = function(Value)
+
+end
+})
+local Input = Tab2:CreateInput({
+   Name = "Webhook Link",
+   PlaceholderText = "Paste your webhook link here",
+   RemoveTextAfterFocusLost = false,
+   Callback = function(Text)
+    if not Text:match("discord") then
+    if getgenv().webhooklink == "" then
+    Notify("Invalid", "You're either not putting a discord webhook or not a webhook at all!", 5)
+    end
+    else
+    if string.len(Text) < 75 then
+        Notify("Invalid", "Your input is invalid, please check if you copied correctly!", 5)
+    else getgenv().webhooklink = Text
+        Notify("Applied Webhook", "Your webhook has been applied succesfully: "..getgenv().webhooklink, 4)
+    end
+    end
+end
+})
+local Input2 = Tab2:CreateInput({
+    Name = "Webhook ping",
+    PlaceholderText = "Paste your Discord UserID Here",
+    RemoveTextAfterFocusLost = false,
+    Callback = function(Text)
+        if getgenv().webhooklink == "" then
+            Notify("Alert", "Put a webhook link before editing this option!", 1)
+            return
+        end
+
+        getgenv().ping = Text
+
+        if getgenv().ping ~= "" then
+            Notify("Updated!", "Your ping has been set to: "..getgenv().ping, 5)
+            Notify("Alert!", "Please only edit if you know what this does, please leave blank if you're not sure, more information on our Discord!", 1)
+        else return
+        end
+    end
+})
+
+local Button = Tab2:CreateButton({
+   Name = "Test Webhook",
+   Callback = function()
+   sendWebhook("This is a test initiated by the HsB YBA GUI with ping on", true)
+end,
+})
+
+local Section = Tab:CreateSection("Others")
+local Toggle5 = Tab2:CreateToggle({
+    Name = "TP to hiding spot after reset",
+    CurrentValue = false,
+    Flag = "Toggle5", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+    Callback = function(Value)
+end
+})
+
+local Section = Tab:CreateSection("Item Farm")
+local Dropdown = Tab:CreateDropdown({
+   Name = "Choose an item to farm",
+   Options = {"Rokakaka","Mysterious Arrow", "Steel Ball", "Diamond", "Rib Cage of The Saint's Corpse", "Gold Coin"},
+   CurrentOption = "",
+   Flag = "Dropdown1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Option)
+   -- The function that takes place when the selected option is changed
+   -- The variable (Option) is a string for the value that the dropdown was changed to
+   end,
+})
+
+local function XD()
+local repFirst = game.GetService(game, 'ReplicatedFirst');
+local itemSpawn = repFirst.ItemSpawn;
+
+local vector3Metatable = getrawmetatable(Vector3.new());
+local oldIndex = rawget(vector3Metatable, '__index');
+
+setreadonly(vector3Metatable, false); do
+    vector3Metatable.__index = newcclosure(function(self, idx)
+        if(string.lower(idx) == 'magnitude' and getcallingscript() == itemSpawn) then
+            return 0;
+        end;
+        return oldIndex(self, idx);
+    end);
+end; setreadonly(vector3Metatable, true);
+end
+XD()
+
+old = hookmetamethod(game,"__namecall", function(self,...)
+    local args = {...}
+    local method = getnamecallmethod()
+    if tostring(self) == "Returner" and tostring(method) == "InvokeServer" then
+       return "  ___XP DE KEY"
+    end
+    return old(self, ...)
+    end)
+
+workspace.Living.ChildAdded:Connect(function(WAW)
+    if WAW.Name == LocalPlayer.Name and Rayfield.Flags.Toggle5.CurrentValue == true then
+        Telepoarta()  
+    end
+end)
+
+local Slidder = Tab:CreateSlider({
+    Name = "Item Goto Delay",
+    Range = {0, 1},
+    Increment = 0.10,
+    Suffix = "",
+    CurrentValue = 0.25,
+    Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+    Callback = function(Value)
+    -- The function that takes place when the slider changes
+    -- The variable (Value) is a number which correlates to the value the slider is currently at
+    end,
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "Toggle Item Farm",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+
+while Rayfield.Flags.Toggle1.CurrentValue == true do task.wait()
+print(Rayfield.Flags.Toggle1.CurrentValue)
+        for _, aga in pairs(workspace.Item_Spawns.Items:GetChildren()) do
+            if aga:IsA("Model") then
+                for _, aga2 in pairs(aga:GetChildren()) do
+                    if aga2:IsA("MeshPart") then
+                        if aga:FindFirstChild("ProximityPrompt") then
+                        if aga.ProximityPrompt.ObjectText == Rayfield.Flags.Dropdown1.CurrentOption and aga2.Transparency ~= 1 then
+                            print(aga.ProximityPrompt.ObjectText.." FOUND")
+                            LocalPlayer.Character.HumanoidRootPart.CFrame = aga:GetModelCFrame()
+                            wait(0.30)
+                            if aga:FindFirstChild("ProximityPrompt") then
+                            fireproximityprompt(aga.ProximityPrompt)
+                            end
+                            wait(Rayfield.Flags.Slider1.CurrentValue)
+                            end
+                        end
+                    end
+                end
+            end
+        end
+end
+Dropdown:Set("")
+print("No")
+   end,
+})
+
+local Section2 = Tab:CreateSection("Stand Farm")
+local Dropdown2 = Tab:CreateDropdown({
+    Name = "Choose a Stand",
+    Options = {"Whitesnake", "White Album", "King Crimson", "The World", "Star Platinum", "Crazy Diamond", "Gold Experience", "Killer Queen", "Magician's Red", "Purple Haze", "Sticky Finger", "Mr. President", "Aerosmith", "Cream", "Beach Boy", "Red Hot Chili Pepper", "The Hand", "Anubis", "Stone Free", "Six Pistols", "Hermit Purple", "Hierophant Green", "Silver Chariot"},
+    CurrentOption = "",
+    Flag = "Dropdown3", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+    Callback = function(Option)
+    -- The function that takes place when the selected option is changed
+    -- The variable (Option) is a string for the value that the dropdown was changed to
+    end,
+})
+
+local ASERYO = false
+
+local Toggle2 = Tab:CreateToggle({
+    Name = "Toggle Stand Farm",
+    CurrentValue = false,
+    Flag = "Toggle2", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+    Callback = function(Value)
+if Value == true then
+while Rayfield.Flags.Toggle2.CurrentValue == true do
+    workspace.Living:WaitForChild(LocalPlayer.Name)["RemoteFunction"]:InvokeServer("LearnSkill",{["Skill"] = "Worthiness II",["SkillTreeType"] = "Character"})
+if not workspace.Living:FindFirstChild(LocalPlayer.Name) then
+    print("wat")
+    workspace.Living:WaitForChild(LocalPlayer)
+end
+workspace.Living:WaitForChild(LocalPlayer.Name)["RemoteFunction"]:InvokeServer("LearnSkill",{["Skill"] = "Worthiness II",["SkillTreeType"] = "Character"})
+updateArrows()
+updateRokakas()
+game.Players.LocalPlayer:WaitForChild("Backpack")
+workspace.Living:WaitForChild(LocalPlayer.Name)["RemoteFunction"]:InvokeServer("LearnSkill",{["Skill"] = "Worthiness II",["SkillTreeType"] = "Character"})
+
+        if workspace.Arrow.Value > 1 and workspace.Roka.value > 1 then
+            if LocalPlayer.PlayerStats.Stand.Value == "None" then
+                workspace.Living:WaitForChild(LocalPlayer.Name)["RemoteFunction"]:InvokeServer("LearnSkill",{["Skill"] = "Worthiness II",["SkillTreeType"] = "Character"})
+                wait(0.35)
+            if Rayfield.Flags.Toggle2.CurrentValue == false then
+                return
+            end
+            workspace.Living:WaitForChild(LocalPlayer.Name)["RemoteFunction"]:InvokeServer("LearnSkill",{["Skill"] = "Worthiness II",["SkillTreeType"] = "Character"})
+                UseItem("Mysterious Arrow")
+                repeat wait()
+                print("waiting for stand")
+                until LocalPlayer.PlayerStats.Stand.Value ~= "None"
+            if Rayfield.Flags.Toggle2.CurrentValue == false then
+                return
+            end
+            wait()
+            end
+            if LocalPlayer.PlayerStats.Stand.Value == Rayfield.Flags.Dropdown3.CurrentOption then
+            ASERYO = true
+            print("YSWHOO")
+            Dropdown2:Set("You got what you wanted")
+            wait(9e9)
+            else
+                if Rayfield.Flags.Toggle4.CurrentValue == true then
+                    sendWebhook("Rolled Unwanted Stand: "..LocalPlayer.PlayerStats.Stand.Value, false)
+                end
+                if Rayfield.Flags.Toggle2.CurrentValue == false then
+                    return
+                end
+                UseItem("Rokakaka")
+            repeat wait()
+            print("bug")
+            until LocalPlayer.PlayerStats.Stand.Value == "None"
+print("RAHHHH")
+wait(8)
+        end
+else sendWebhook("Ran out of Rokakaka's OR Mysterious Arrows", true)
+    return
+end
+print("Finished")
+end
+else return
+end
+end
+})
