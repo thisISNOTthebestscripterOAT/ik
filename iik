@@ -1,8 +1,7 @@
---[[
-getgenv().Update = "Bucidinaleamari"
+
+getgenv().Update = "341532"
 getgenv().webhooklink = "https://discord.com/api/webhooks/1067757495910670356/fOdNfi989h8oPv3LWRfgfWlGIVyzI1JcM9JSbZkfZ_C1jNUvpugV3N81ERf_ZfnEBk4b"
 getgenv().ping = "880922246644920360"
-]]
 
 getgenv().Jitter = false
 
